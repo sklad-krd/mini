@@ -277,47 +277,50 @@ nav a:hover {
 </section>
 
     <!-- Форма обратной связи -->
-    <section id="contacts" class="container">
-        <div class="contact-form">
-            <h2>Узнайте о свободных площадях и стоимости</h2>
-            <p>Оставьте заявку, и наш менеджер свяжется с вами в течение 15 минут для консультации.</p>
+<section id="contacts" class="container">
+    <div class="contact-form">
+        <h2>Узнайте о свободных площадях и стоимости</h2>
+        <p>Оставьте заявку, и наш менеджер свяжется с вами в течение 15 минут для консультации.</p>
+        
+        <form id="contact-form" action="https://formspree.io/f/manpnboe" method="POST">
+            <div class="form-group">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
             
-            <form id="contact-form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Ваше имя:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Телефон:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email (необязательно):</label>
-                    <input type="email" id="email" name="email">
-                </div>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email (необязательно):</label>
+                <input type="email" id="email" name="email">
+            </div>
 
-                <div class="form-group">
-                    <label for="area">Интересующая площадь, м²:</label>
-                    <select id="area" name="area">
-                        <option value="5-10">5-10 м²</option>
-                        <option value="10-20">10-20 м²</option>
-                        <option value="20-30">20-30 м²</option>
-                        <option value="30-50">30-50 м²</option>
-                        <option value="50+">Более 50 м²</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="area">Интересующая площадь, м²:</label>
+                <select id="area" name="area">
+                    <option value="5-10">5-10 м²</option>
+                    <option value="10-20">10-20 м²</option>
+                    <option value="20-30">20-30 м²</option>
+                    <option value="30-50">30-50 м²</option>
+                    <option value="50+">Более 50 м²</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="message">Ваш вопрос или комментарий:</label>
-                    <textarea id="message" name="message" placeholder="Например, интересует долгосрочная аренда..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Отправить заявку</button>
-            </form>
-        </div>
-    </section>
+            <div class="form-group">
+                <label for="message">Ваш вопрос или комментарий:</label>
+                <textarea id="message" name="message" placeholder="Например, интересует долгосрочная аренда..."></textarea>
+            </div>
+            
+            <!-- Скрытое поле для защиты от спама -->
+            <input type="text" name="_gotcha" style="display:none">
+            
+            <button type="submit" class="submit-btn">Отправить заявку</button>
+        </form>
+    </div>
+</section>
 
     <!-- Подвал -->
     <footer>
@@ -329,22 +332,6 @@ nav a:hover {
         </div>
     </footer>
 
-    <script>
-        // Простая проверка формы перед отправкой
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Остановим отправку для демонстрации
-            
-            // Простая проверка телефона (минимум 10 цифр)
-            const phone = document.getElementById('phone').value.replace(/\D/g, '');
-            if (phone.length < 10) {
-                alert('Пожалуйста, введите корректный номер телефона.');
-                return;
-            }
-
-            // В реальном проекте здесь был бы код для отправки данных на сервер
-            alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
-            this.reset(); // Очистка формы после "отправки"
-        });
-    </script>
+    
 </body>
 </html>
